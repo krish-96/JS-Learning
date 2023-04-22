@@ -1,0 +1,64 @@
+To know about npm basic setup and creating a build quickly:
+https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282
+
+To each and every step + images + css files:
+https://rajaraodv.medium.com/webpack-the-confusing-parts-58712f8fcad9
+
+1. Create new Directory and change the derectory
+2. run the commande
+    npm init -y
+3. Now, we are going to install Webpack running the following code :
+    npm install —- save-dev webpack webpack-cli
+4. After installing Webpack, we are going to modify the scripts in the package.json.
+    "scripts": {
+    "build": "webpack build"
+  }
+5. If we open the terminal now and run the following command
+    npm run build
+6. Now we can see new directory and file named "dist" and app.js file.
+7. Until now we have been able to compile our index.js file and get an output in a dist folder. But, what about if now we are more specific with the wepack configuration? Let’s go ahead.
+8. First, let’s create a file named “webpack.config.js” located parallel to the packages.json file.
+9. Inside the file we have just created, we will add the following lines:
+    const path =require("path")
+    module.exports = {
+        entry : "./src/index.js",
+        output : {
+            filename : "app.js",
+            path : path.resolve(__dirname, "dist"),
+        }
+    }
+10. As you can see we will have two main sections inside the module.export, the entry where we will select oust main js file (in this case index.js), and the output where we will specify the name of the compiled js (app.js) and the output path (dist). We also have used “path.resolve” in order to specify the relative path, so in order to use it we have to add line 1 and require it.
+11. Now we will add another script inside the package.json and specify if we are on development mode or production mode:
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+12. Everytime when you run anyone of the following commands, new build will be generated and override the existing file.
+    npm run dev or npm run build
+13. Now let’s start installing the loaders. We will start installing the necessary loaders for styling our application. run the following command npm i -D sass-loader cdd-loader node-sass.
+    npm i -D sass-loader css-loader node-sass
+14. then, we will configure our webpack.config.js file. there, we will add a module object, and inside it will have the rules key which has an array as a value. Inside the array we will add an array with the following rules:
+    module.exports = {
+    entry : "./src/index.js",
+    output : {
+        filename : "app.js",
+        path : path.resolve(__dirname, "dist"),
+    },
+    module : {
+        rules : [
+            {
+            test : /\.css$/,
+            use : [
+                "css-loader",
+                "sass-loader"
+            ]
+            }
+        ]
+    }
+15. Once we added the rules, We need to import the scss file to the index.js file. In this step, you won’t see a file as output since it is being loaded to the styles tag inside the HTML when compiling. Later, we will install a plugin for extracting the CSS
+    index.js file:
+        import "./css/styles.css"
+16. Now If we run npm run dev, we will see that everything compiles with no errors. So, that’s it? Not yet. Now, we will configure webpack for compiling images.
+17. Run the following command and add the build to our html file.
+    Terminal:
+        npm run dev or npm run build
+    index.html:
+        <script src="dist/app.js"></script>

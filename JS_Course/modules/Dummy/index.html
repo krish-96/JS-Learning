@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+    <style>
+        div{
+            border: 1px solid;
+            margin: 5px 10%;
+            padding: 5px 10%;
+        }
+        form{
+            color: DarkBlue;
+        }
+        .form_field{
+            color: white;
+            background-color:black;
+            text-align: center;
+<!--            display : block;-->
+            border-bottom : 3px solid red;
+<!--            width : 100%-->
+        }
+        .form_submit{
+            color:red;
+            background-color: black;
+            border : 5px solid orange;
+            border-bottom : 5px solid orange;
+            margin-top :5px;
+        }
+        h1{
+            font-size:16px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <div>
+        <h1>Welcome to JScript!</h1>
+    </div>
+    <div>
+        <form>
+            Name &nbsp&nbsp: <input class="form_field" type="text" placeholder="Your Name" name="name"><br>
+            Email &nbsp&nbsp: <input class="form_field" type="email" placeholder="Your Mail" name="email"><br>
+            Mobile : <input class="form_field" type="number" placeholder="Your Mobile Number" name="mobile"><br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <input class="form_submit" onclick="check()" type="submit" value="Submit">
+        </form>
+    </div>
+
+</div>
+
+<script type="module" src="index.js"></script>
+
+</body>
+</html>

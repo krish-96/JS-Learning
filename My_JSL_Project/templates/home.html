@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Home | JavaScript Learning</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Home | JavaScript Learning</title>
+
+    <style>
+        body {
+            background-color: #c0c0c0;
+            margin: 20px;
+            padding: 20px;
+            border: solid 4px #ffffff;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        h2 {
+            font-family: 'Bitter', serif;
+
+        }
+
+        h3 {
+            font-family: 'Alegreya', serif;
+
+        }
+    </style>
+</head>
+<body>
+{#=========== My Script ==============#}
+<h2 class="text-center">MyScript</h2>
+
+<div id="myDiv1" class="m-5">
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec quam vitae metus tincidunt ornare. Sed a
+        arcu
+        vel enim ultrices vestibulum ac ut elit. Aenean ultricies arcu a scelerisque posuere. Fusce in egestas metus, at
+        ornare turpis. Mauris vulputate ante in velit ullamcorper maximus. Cras eu purus at justo ultricies cursus. Duis
+        facilisis gravida nibh non ultrices. Sed odio erat, accumsan vitae ex ut, tempor interdum sapien. Mauris tempus
+        non
+        diam vitae ultrices. Morbi sed efficitur arcu, eu vehicula ligula. Sed tempus, nulla a lobortis auctor, orci
+        nibh
+        fermentum metus, id volutpat ante erat non lacus. Duis fringilla est eget nisl mollis euismod. Integer sit amet
+        auctor sem. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec quam vitae metus tincidunt ornare.
+        Sed a arcu
+        vel enim ultrices vestibulum ac ut elit. Aenean ultricies arcu a scelerisque posuere. Fusce in egestas metus, at
+        ornare turpis. Mauris vulputate ante in velit ullamcorper maximus. Cras eu purus at justo ultricies cursus. Duis
+        facilisis gravida nibh non ultrices. Sed odio erat, accumsan vitae ex ut, tempor interdum sapien. Mauris tempus
+        non
+        diam vitae ultrices. Morbi sed efficitur arcu, eu vehicula ligula. Sed tempus, nulla a lobortis auctor, orci
+        nibh
+        fermentum metus, id volutpat ante erat non lacus. Duis fringilla est eget nisl mollis euismod. Integer sit amet
+        auctor sem. </p>
+    <p id="col_4p"></p>
+    <p id="time_now"></p>
+</div>
+
+
+<div class="text-center mt-5">
+    <button onclick="hideDisplay()">Hide/Show</button>
+    <button onclick="changeBgClr()">Change BG Color</button>
+    <button onclick="timeNow()">What's the Time now?</button>
+    <input type="button" value="Display Names" onclick="namesDisplay()">
+</div>
+
+
+<script>
+
+    let text = document.getElementById("myDiv1").innerHTML
+
+    function hideDisplay() {
+        if (document.getElementById("myDiv1").innerHTML !== '') {
+            return document.getElementById("myDiv1").innerHTML = ''
+        } else {
+            return document.getElementById("myDiv1").innerHTML = text
+        }
+    }
+
+    function namesDisplay() {
+        document.getElementById("col_4p").innerHTML = 'Gopi Krishna - Harshitha - Logitha';
+    }
+
+    function changeBgClr() {
+        document.body.style.backgroundColor = 'aqua';
+    }
+
+    function timeNow() {
+        document.getElementById("time_now").innerHTML = Date();
+    }
+
+    alert("You are here to learn JavaScript.")
+    console.log("---> At your location : ", Date())
+
+
+</script>
+
+<script>
+
+    var a = 20, b = 40;
+    {#var b=30;#}
+    console.log(`The sum of ${a} and ${b} is `, a + b)
+    let name;
+    name = "Gopi Krishna"
+    console.log(`name Variable contains : ${name}`)
+
+
+    function fullName(firstName, lastName) {
+        return `${firstName} ${lastName}}`;
+    }
+
+    console.log(`Calling the function fullname ${fullName("Krishna", "Belamkonda")}`);
+</script>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+-->
+</body>
+</html>

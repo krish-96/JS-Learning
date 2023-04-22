@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/home.css">
+</head>
+<body>
+<h1>Hello World!</h1>
+<h2>This is to demonstrate Webpack bundle!</h2>
+ <div id="submitName">
+     <input type="text" name="name" id="name">
+     <input type="button" value="submit" onclick="checkName()">
+ </div>
+<h5 id="displayName"></h5>
+
+<script src="./dist/app.js"></script>
+<script>
+    function checkName(){
+        let givenName = document.getElementById('name');
+        let givenNameValue = givenName;
+        if (givenNameValue.value){
+            let elem = document.getElementById("displayName");
+            elem.innerHTML = "Welcome " + givenNameValue.value.toUpperCase();
+            let subName = document.getElementById("submitName");
+            if (subName.style.display === 'none') {subName.style.display = 'block';}
+            else {subName.style.display = 'none';}
+
+            return elem;
+        }
+
+    }
+</script>
+</body>
+</html>
